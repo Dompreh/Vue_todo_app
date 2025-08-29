@@ -15,7 +15,6 @@
     <div class="container">
       <div class="components">
         <img alt="Vue logo" src="./assets/logo.png" class="logo" />
-
         <QuestionComp v-if="!answered" @answered="handleAnswered" />
         <todo-list v-else></todo-list>
       </div>
@@ -71,14 +70,14 @@ export default {
     handleAnswered(option) {
       this.selectedCar = option;
       this.answered = true;
-      this.currentBg;
+      this.currentIndex = 0;
       this.setChangeBg(option);
 
       // if (this.intervalId) {
       //   clearInterval(this.intervalId);
       // }
 
-      // Start changing background every 6 seconds
+      // Start changing background every 10 seconds
       this.intervalId = setInterval(() => {
         this.setChangeBg(option);
       }, 10000);
@@ -89,7 +88,7 @@ export default {
 
       this.currentBg = images[this.currentIndex];
       this.currentIndex = (this.currentIndex + 1) % images.length;
-      // console.log("curnt ",this.currentBg)
+      
     },
   },
   beforeUnmount() {
@@ -153,7 +152,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4); /* adjust opacity (0.3 = 30% darker) */
+  background: rgba(0, 0, 0, 0.3); /* adjust opacity (0.3 = 30% darker) */
   z-index: 0;
 }
 .logo {

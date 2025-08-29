@@ -64,15 +64,15 @@ input{
 
 
 .send {
-  padding: 4px 16px;
+  padding: 4px 20px;
   font-size: 1rem;
   background: #41b883;
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
-.flex {
+/* .flex {
   display: flex;
   justify-content: right;
-}
+} */
 </style>
